@@ -8,8 +8,13 @@ namespace DB_form_xls_test
     {
         static void Main(string[] args)
         {
+            //string appPath = System.Reflection.Assembly.GetExecutingAssembly().Location + "DataToCS.xlsx";
+            string appDir = "u:\\dev\\ANYC\\DB_form_xls_test\\";
+            string appPath =appDir + "DataToCS.xlsx";
+            //Console.WriteLine(appPath);
 
-            GetFromXls GetXls = new GetFromXls("u:\\dev\\ANYC\\DB_form_xls_test\\DataToCS.xlsx");
+            GetFromXls GetXls = new GetFromXls(appPath);
+
             DataSet Ds = GetXls.GetDataFromXls();
 
             Console.WriteLine($"\nDataTable.Count: {Ds.Tables.Count}");
